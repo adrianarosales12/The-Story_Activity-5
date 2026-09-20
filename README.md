@@ -42,6 +42,26 @@
 **Comment:** At the dead end, DFS had no new moves and had to backtrack. The final screenshot shows the path taken and the total step count.
 
 ---
+
+## 4. Reflection (A5_ReflectionQuestions.md)
+
+1. What is a stack and why does DFS use it?
+A stack is like a pile of plates: the last one you put on top is the first one you take off (LIFO — last in, first out). DFS uses a stack because it always wants to go deeper into the cave before coming back. Each new chamber is added on top, and when DFS can’t go further, it removes the top chamber to backtrack.
+
+2. Why is the visited list important?
+The visited list keeps track of which chambers have already been explored. Without it, DFS would get stuck in loops forever (for example, the Torch Hallway → Echo Chamber → Bat Roost → Entrance cycle). By remembering visited chambers, DFS avoids repeating the same path and can eventually reach the treasure.
+
+3. Was the path DFS found the shortest possible path?
+No, DFS does not guarantee the shortest path. It only guarantees that it will eventually find a path to the goal. In the app, the Search Space tab shows all possible paths, including shorter ones. The path DFS actually walked was longer than the shortest possible path, which proves DFS is about exploration, not efficiency.
+
+4. Personal takeaway
+This activity helped me understand how DFS works step by step. I saw how the stack controls the order of exploration, how backtracking happens at dead ends, and why the visited list is essential. It showed me that DFS is powerful for exploring all possibilities, but if I need the shortest path, I would use a different algorithm like Breadth‑First Search.
+
+
+---
+
+- Video link/file: 
+
 ## 📂 Evidence
 
 - `Step1_SearchSpace.png`  
@@ -49,4 +69,3 @@
 - `Step3_DeadEnd.png`  
 - `Step4_Final.png`  
 - `A5_ReflectionQuestions.md`  
-- Video link/file
