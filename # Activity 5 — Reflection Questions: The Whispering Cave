@@ -1,0 +1,43 @@
+# Activity 5 — Reflection Questions: The Whispering Cave
+
+---------
+
+## Part 1 — Facts, Rules, and Recursion (Session 10)
+1. When I asked the Oracle whether reachable(Entrance, TreasureRoom), the answer came back TRUE.
+
+2. The line reachable(X, Y) :- tunnel(X, Y). is the base case because it stops immediately when there is a direct tunnel.
+  The line reachable(X, Y) :- tunnel(X, Z), reachable(Z, Y). is the recursive case because it calls itself again with a new chamber Z. It is recursive since the rule keeps repeating until it either finds the goal or runs out of tunnels.
+
+---------
+## Part 2 — The Search Space (Session 11)
+
+3. The initial state is the Entrance chamber, and the goal state is the Treasure Room.
+
+4. The brute-force count showed [insert number from your app] total paths. The paths were:
+
+- Entrance → TorchHallway → EchoChamber → TreasureRoom
+
+- Entrance → BatRoost → … → TreasureRoom
+
+5. The search space is the complete set of all possible paths from Entrance to Treasure Room. DFS only finds one actual path by following its “go deep first” strategy. They differ because DFS may explore side tunnels and backtrack, while the search space includes every possible route whether or not DFS touches them.
+
+---------
+## Part 3 — Depth-First Search (Session 12)
+
+6. DFS visited the chambers in this order:
+Entrance → TorchHallway → EchoChamber → BatRoost → … → TreasureRoom.
+In total, it visited [insert number from your run] chambers.
+
+7. The genuine dead end was at [name the chamber where DFS had to backtrack].
+The chamber that was never visited was [name it], because DFS reached the treasure before needing to explore that branch.
+
+8. The exact path DFS used was:
+Entrance → TorchHallway → EchoChamber → TreasureRoom.
+This was not the shortest path listed in Question 4. DFS doesn’t guarantee shortest paths because it always dives deep into one branch before checking alternatives.
+
+---------
+## Part 4 — Synthesis
+
+9. To a 10‑year‑old: Both the recursive rule and the stack search are like two costumes for the same idea. One is written like a recipe (“if there’s a tunnel, go deeper”), and the other is acted out step by step with a backpack stack. Both mean: keep going forward until you can’t, then backtrack.
+
+10. Real-world use: Exploring a computer’s file system. DFS goes into one folder, then into subfolders, as deep as possible. If it reaches a folder with no more files, it backtracks to the previous folder and continues. It’s the same “go deep, then backtrack” principle.
